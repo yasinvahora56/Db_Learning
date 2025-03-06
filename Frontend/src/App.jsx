@@ -1,34 +1,31 @@
-import './App.css'
-import Table from './Components/Table'
-import { createBrowserRouter, RouterProvider } from "react-router-dom"
+import './App.css';
+import Table from './Components/Table';
+import EditUserPage from "./Components/EditUserPage.jsx"
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import AddUserPage from './Components/AddUserPage.jsx';
 
 function App() {
 
-  const route = createBrowserRouter([
-
+  const router = createBrowserRouter([
     {
-      path:"/",
-      element:"Home Page"
+      path: "/",
+      element: <Table /> 
     },
     {
-      path:"/add",
-      element:"add New User Page"
+      path: "/edit",
+      element: <EditUserPage />
     },
     {
-      path:"/update",
-      element:"Update edit User page"
+      path: "/add",
+      element: <AddUserPage />
     },
-
-  ])
+  ]);
 
   return (
-    <>
     <div>
-      <RouterProvider router={route}></RouterProvider>
+      <RouterProvider router={router}></RouterProvider>
     </div>
-    <Table/>
-    </>
-  )
+  );
 }
 
-export default App
+export default App;
